@@ -6,7 +6,7 @@ The dotfiles plugin is the start point to create something similar to <a href="h
 If you like the idea of xxh click ⭐ on the repo and stay tuned.
 </p>
 
-The `home` directory contains the files which will be copied to xxh home directory (default `/home/user/.xxh/`) before running shell. 
+Fork this repository and put your files to the `home` directory. The files will be copied to xxh home directory (default `/home/user/.xxh/`) before running shell. 
 The [XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) directory `.config` 
 will be copied to `$XDG_CONFIG_HOME` (default `/home/user/.xxh/.config`). Learn more about [home settings in docs](https://github.com/xxh/xxh/wiki#how-to-set-homeuser-as-home-on-host).
 
