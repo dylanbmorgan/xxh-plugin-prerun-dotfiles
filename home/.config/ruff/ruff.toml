@@ -1,0 +1,60 @@
+line-length = 88
+unsafe-fixes = true
+
+[analyze]
+detect-string-imports = true
+
+[format]
+# Enable reformatting of code snippets in docstrings.
+docstring-code-format = true
+
+[lint]
+# select = ['E4', 'E7', 'E9', 'F']  # Default
+select = [
+  'E1',
+  'E4',
+  'E5',
+  'E7',
+  'E9',
+  'F',
+  'ERA',
+  'ANN',
+  'S',
+  'BLE',
+  'F',
+  'B',
+  'A',
+  'C4',
+  'T10',
+  'EM',
+  'EXE',
+  'ICN',
+  'LOG',
+  'G',
+  'INP',
+  'PIE',
+  'PYI',
+  'PT',
+  'RET',
+  'SIM',
+  'ARG',
+  'PTH',
+  'NPY',
+  'N',
+  'PERF',
+  'DOC',
+  'D',
+  'PL',
+  'UP',
+  'RUF',
+  'TRY',
+]
+ignore = ['ANN204', 'D105', 'D206', 'D300', 'E111', 'E114', 'E117', 'PTH123']
+
+[lint.pycodestyle]
+max-doc-length = 88
+ignore-overlong-task-comments = true
+
+[lint.pydocstyle]
+# Use Google-style docstrings.
+convention = "numpy"

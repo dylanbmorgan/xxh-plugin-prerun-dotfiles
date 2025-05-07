@@ -1,0 +1,162 @@
+[[language]]
+name = "awk"
+formatter = { command = "awk", timeout = 5, args = [
+  "--file=/dev/stdin",
+  "--pretty-print=/dev/stdout",
+] }
+auto-format = true
+
+[[language]]
+name = 'bash'
+formatter = { command = "shfmt", args = ["-s"] }
+auto-format = true
+
+[[language]]
+name = 'bibtex'
+formatter = { command = 'bibtex-tidy' }
+auto-format = true
+
+[[language]]
+name = "c"
+file-types = ["c", "h"]
+formatter = { command = 'clang-format' }
+auto-format = true
+
+[[language]]
+name = "cpp"
+file-types = ["cpp", "cc", "cxx", "hpp", "hcc", "hxx"]
+formatter = { command = 'clang-format' }
+auto-format = true
+
+[[language]]
+name = "cmake"
+formatter = { command = "gersemi", args = ["-i"] }
+auto-format = true
+
+[[language]]
+name = 'dockerfile'
+language-servers = ['docker-language-server']
+formatter = { command = "dockerfmt" }
+auto-format = true
+
+[[language]]
+name = "fish"
+formatter = { command = "fish_indent" }
+auto-format = true
+
+[[language]]
+name = "fortran"
+formatter = { command = "fprettify", args = ["--stdout"] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "json"] }
+auto-format = true
+
+[[language]]
+name = "jsonc"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "jsonc"] }
+auto-format = true
+
+[[language]]
+name = "julia"
+formatter = { command = "julia", timeout = 60, args = [
+  "--startup-file=no",
+  "--history-file=no",
+  "--project",
+  "--quiet",
+  "-e",
+  "using JuliaFormatter; print(format_text(read(stdin, String)));",
+] }
+
+# scope = "source.julia"
+# injection-regex = "julia"
+# file-types = ["jl"]
+# roots = ["Project.toml", "Manifest.toml", "JuliaProject.toml"]
+# comment-token = "#"
+# language-server = { command = "julia", args = [
+#     "--project=@helix-lsp",
+#     "--sysimage=/home/uncomfy/.julia/environments/helix-lsp/languageserver.so",
+#     "--startup-file=no",
+#     "--history-file=no",
+#     "--quiet",
+#     "--sysimage-native-code=yes",
+#     "/home/uncomfy/.local/bin/julia-lsp.jl"
+#     ] }
+# indent = { tab-width = 4, unit = "    " }
+
+[[languages]]
+name = 'latex'
+
+[language-server.texlab.config.texlab]
+build.onSave = true
+chktex.onEdit = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"] }
+auto-format = true
+
+[[language]]
+name = "python"
+# language-servers = ['basedpyright', "pylsp", "pylyzer",  "ruff"]
+language-servers = ["pylsp", "pylyzer", "ruff"]
+formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
+auto-format = true
+
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+except-features = ["format", "code-action"]
+
+[language-server.basedpyright.config.basedpyright]
+disableOrganizeImports = true
+analysis.autoSearchPaths = true
+analysis.typeCheckingMode = "recommended"
+analysis.diagnosticMode = "openFilesOnly"
+
+[language-server.pylsp]
+except-features = ["format"]
+
+[language-server.pylsp.config.pylsp.plugins]
+rope.enabled = true
+pyflakes.enabled = false
+mccabe.enabled = false
+pycodestyle.enabled = false
+autopep8.enabled = false
+yapf.enabled = false
+flake8.enabled = false
+pylint.enabled = false
+ruff.enabled = false
+
+[language-server.pylyzer]
+command = "pylyzer"
+args = ["--server"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "rust"
+formatter = { command = "rustfmt" }
+auto-format = true
+
+[language-server.rust-analyzer.config.check]
+check.command = "clippy"
+cargo.features = "all"
+
+[[language]]
+name = 'sshclientconfig'
+language-servers = ['config-lsp']
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["format", "-"] }
+auto-format = true
+
+[[language]]
+name = "yaml"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "yaml"] }
+auto-format = true

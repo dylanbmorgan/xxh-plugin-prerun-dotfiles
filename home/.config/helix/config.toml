@@ -1,0 +1,22 @@
+theme = "dracula"
+
+[editor]
+scrolloff = 2
+middle-click-paste = false
+line-number = "relative"
+cursorline = true
+bufferline = "multiple"
+color-modes = true
+text-width = 88
+popup-border = "none"
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.normal]
+X = "extend_line_up"
