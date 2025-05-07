@@ -1,0 +1,276 @@
+# enable the newline at the start of the prompt
+add_newline = true
+
+command_timeout = 5_000
+
+# see https://starship.rs/presets/pastel-powerline
+# format = """
+# [](#9A348E)\
+# $os\
+# $username\
+# [](bg:#DA627D fg:#9A348E)\
+# $directory\
+# [](fg:#DA627D bg:#FCA17D)\
+# $git_branch\
+# $git_status\
+# [](fg:#FCA17D bg:#86BBD8)\
+# $c\
+# $elixir\
+# $elm\
+# $golang\
+# $gradle\
+# $haskell\
+# $java\
+# $julia\
+# $nodejs\
+# $nim\
+# $rust\
+# $scala\
+# [](fg:#86BBD8 bg:#06969A)\
+# $docker_context\
+# [](fg:#06969A bg:#33658A)\
+# $time\
+# [ ](fg:#33658A)\
+# """
+
+# format = """
+# $shlvl$shell$all
+# """
+
+format = """
+$shlvl$shell$username@$hostname$all
+"""
+
+# right_format = """$os"""
+# right_format = """$status"""
+
+continuation_prompt = "▶▶ "
+
+# [character]
+# disabled = true
+
+[cmd_duration]
+show_milliseconds = false
+show_notifications = false
+min_time_to_notify = 30_000
+
+[directory]
+# style = "bg:#DA627D"
+# format = "[ $path ]($style)"
+truncation_length = 5
+truncate_to_repo = true
+truncation_symbol = "…/"
+read_only = " 󰌾"
+
+[hostname]
+ssh_only = false
+# trim_at = ""
+style = "bold blue"
+format = "[$hostname ]($style)"
+ssh_symbol = " "
+disabled = false
+
+[os] 
+disabled = true 
+
+[shell]
+disabled = false
+bash_indicator = ""
+fish_indicator = "󰈺"
+zsh_indicator = ""
+xonsh_indicator = "𓆗"
+
+[shlvl]
+disabled = false
+format = "[$shlvl$symbol]($style) "
+symbol = ""
+
+[status]
+disabled = false
+symbol = "✗ "
+
+[sudo]
+# format = '[$symbol]($style)'
+disabled = false
+
+[username]
+style_user = "white bold"
+style_root = "red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+# Langauges
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cmake]
+symbol = "\ue794"
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+# symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = ''
+Alpine = ''
+AlmaLinux = ''
+Amazon = ''
+Android = ''
+Arch = ''
+Artix = ''
+CachyOS = ''
+CentOS = ''
+Debian = ''
+DragonFly = ''
+Emscripten = ''
+EndeavourOS = ''
+Fedora = ''
+FreeBSD = ''
+Garuda = '󰛓'
+Gentoo = ''
+HardenedBSD = '󰞌'
+Illumos = '󰈸'
+Kali = ''
+Linux = ''
+Mabox = ''
+Macos = ''
+Manjaro = ''
+Mariner = ''
+MidnightBSD = ''
+Mint = ''
+NetBSD = ''
+NixOS = ''
+Nobara = ''
+OpenBSD = ''
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = ''
+OracleLinux = '󰌷'
+Pop = ''
+Raspbian = ''
+Redhat = ''
+RedHatEnterprise = ''
+RockyLinux = ''
+Redox = '󰀘'
+Solus = ''
+SUSE = ''
+Ubuntu = ''
+Unknown = ''
+Void = ''
+Windows = ''
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+pyenv_version_name = true
+pyenv_prefix = "v"
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "

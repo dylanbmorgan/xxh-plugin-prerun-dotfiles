@@ -1,0 +1,131 @@
+# Use custom format
+# format = """
+# $shlvl$shell$username@$hostname$status$sudo$jobs$cmd_duration$git_branch$git_commit$git_state$git_status$rust$julia$python$cmake$conda$package| $directory
+# $character"""
+
+format = """
+$shlvl$shell$username@$hostname$all
+"""
+
+# enable the newline at the start of the prompt
+add_newline = true
+
+command_timeout = 5_000
+
+# [character]
+# format = "$symbol "
+# success_symbol = "[🚀]()"
+# vicmd_symbol = "[🚀]()"
+# error_symbol = "[🚀]()"
+
+[cmd_duration]
+show_milliseconds = false
+show_notifications = false
+min_time_to_notify = 30_000
+format = "took [$duration](bold purple) "
+
+# [conda]
+# symbol = ' '
+# format = 'on [$symbol$environment]($style) '
+# ignore_base = false
+# disabled = false
+
+# [cmake]
+# format = "via [$symbol($version )]($style)"
+# disabled = false
+
+[directory]
+truncation_length = 5
+truncate_to_repo = true
+read_only = " 🔒"
+truncation_symbol = '../'
+
+# [git_branch]
+# format = 'on [$symbol$branch]($style) '
+# style = 'bold #BC6EC5'
+
+# [git_commit]
+# format = ' [\\($hash\\)]($style) [\\($tag\\)]($style) '
+# only_detached = false
+# tag_disabled = false 
+# style = 'bold yellow'
+# disabled = false 
+
+# [git_state]
+# format = ' \([$state( $progress_current/$progress_total)]($style)\)'
+# style = 'bold yellow'
+
+# [git_metrics]
+# disabled = false
+
+# [git_status]
+# ahead = "⇡${count}"
+# diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+# behind = "⇣${count}"
+# format = '([\[$all_status$ahead_behind\] ]($style))'
+# style = 'yellow'
+
+[hostname]
+ssh_only = false
+format = "[$hostname ]($style)"
+style = "bold blue"
+trim_at = ""
+disabled = false
+
+# [jobs]
+# symbol = "✦ "
+
+# [julia]
+# format = "[$symbol($version )]($style)"
+
+# [memory_usage]
+# disabled = false
+
+# [package]
+# display_private = true
+
+[python]
+# format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+# symbol = '🐍 '
+# style = 'bold blue'
+pyenv_version_name = true
+# pyenv_prefix = 'v'
+# disabled = false
+
+# [rust]
+
+[shell]
+disabled = false
+bash_indicator = ""
+fish_indicator = "󰈺"
+zsh_indicator = ""
+xonsh_indicator = "𓆗"
+
+[shlvl]
+disabled = false
+format = "[$shlvl$symbol]($style) "
+symbol = ""
+
+# [status]
+# style = "bold red"
+# symbol = "✗ "
+# not_executable_symbol = "🚫 "
+# not_found_symbol = "🔍 "
+# sigint_symbol = "🧱 "
+# signal_symbol = "⚡ "
+# map_symbol = true
+# pipestatus = true
+# pipestatus_separator = '🪠 '
+# format = '[$symbol$status]($style) '
+# disabled = false
+
+# [sudo]
+# format = '[$symbol]($style)'
+# disabled = false
+
+[username]
+style_user = "white bold"
+style_root = "red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true

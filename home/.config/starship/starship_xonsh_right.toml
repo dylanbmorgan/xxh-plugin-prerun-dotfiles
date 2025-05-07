@@ -1,0 +1,6 @@
+format = """
+$line_break\
+$cmd_duration\
+$shell\
+[╯](fg:current_line)
+"""
