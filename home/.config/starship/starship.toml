@@ -15,8 +15,6 @@ $git_state\
 $git_metrics\
 $git_status\
 
-
-$hostname\
 $singularity\
 $kubernetes\
 $vcsh\
@@ -94,9 +92,9 @@ $status\
 $container\
 $netns\
 
-
-$username\
 $sudo\
+$username\
+$hostname\
 $localip\
 [─╮](fg:current_line)\
 $line_break\
@@ -260,6 +258,11 @@ symbol = " "
 [hg_branch]
 symbol = " "
 
+[hostname]
+ssh_only = false
+style = 'blue'
+format = '[─](fg:current_line)[]($style)[󰖟 ](fg:primary bg:$style)[]($style bg:box)[ $hostname](foreground bg:box)[](fg:box)'
+
 [java]
 format = '[─](fg:current_line)[](fg:red)[$symbol](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
 symbol = " "
@@ -272,6 +275,7 @@ format = '[─](fg:current_line)[]($style)[$symbol](fg:primary bg:purple)[
 symbol = " "
 
 [localip]
+ssh_only = false
 format = '[@](fg:foreground bg:box)[$localipv4](fg:foreground bg:box)[](fg:box)'
 disabled = true
 
